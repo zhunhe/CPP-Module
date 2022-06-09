@@ -6,11 +6,13 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:56:02 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/09 13:50:37 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/09 23:04:12 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
+#include <iomanip>
 #include "PhoneBook.hpp"
 
 void PhoneBook::Add() {
@@ -19,31 +21,31 @@ void PhoneBook::Add() {
 
 	std::cout << "first name? ";
 	getline(std::cin, tmpString);
-	if (std::cin.eof())
+	if (std::cin.eof() || tmpString == "")
 		return;
 	tmpContact.SetFirstName(tmpString);
 
 	std::cout << "last name? ";
 	getline(std::cin, tmpString);
-	if (std::cin.eof())
+	if (std::cin.eof() || tmpString == "")
 		return;
 	tmpContact.SetLastName(tmpString);
 
 	std::cout << "nickname? ";
 	getline(std::cin, tmpString);
-	if (std::cin.eof())
+	if (std::cin.eof() || tmpString == "")
 		return;
 	tmpContact.SetNickname(tmpString);
 
 	std::cout << "phone number? ";
 	getline(std::cin, tmpString);
-	if (std::cin.eof())
+	if (std::cin.eof() || tmpString == "")
 		return;
 	tmpContact.SetPhoneNumber(tmpString);
 
 	std::cout << "darkest secret? ";
 	getline(std::cin, tmpString);
-	if (std::cin.eof())
+	if (std::cin.eof() || tmpString == "")
 		return;
 	tmpContact.SetDarkestSecret(tmpString);
 	
@@ -54,40 +56,27 @@ void PhoneBook::Add() {
 }
 
 static std::string convertString(std::string s) {
-	std::string ret = "";
-	const int len = s.length();
-
-	if (len == MAX_LEN_COLUMN)
+	if (s.length() <= MAX_LEN_COLUMN)
 		return s;
-	if (len < MAX_LEN_COLUMN) {
-		for (int i = len; i < MAX_LEN_COLUMN; i++)
-			ret += " ";
-		ret += s;
-	} else {
-		for (int i = 0; i < MAX_LEN_COLUMN - 1; i++)
-			ret += s[i];
-		ret += ".";
-	}
-	return ret;
+	return s.substr(0, MAX_LEN_COLUMN - 1) + ".";
 }
 
 static std::string convertString(int index) {
-	std::string ret = "";
 	std::string s = std::to_string(index);
-	const int len = s.length();
 
-	if (len == MAX_LEN_COLUMN)
+	if (s.length() <= MAX_LEN_COLUMN)
 		return s;
-	if (len < MAX_LEN_COLUMN) {
-		for (int i = len; i < MAX_LEN_COLUMN; i++)
-			ret += " ";
-		ret += s;
-	} else {
-		for (int i = 0; i < MAX_LEN_COLUMN - 1; i++)
-			ret += s[i];
-		ret += ".";
+	return s.substr(0, MAX_LEN_COLUMN - 1) + ".";
+}
+
+static bool	_stoi(int &num, std::string s) {
+	num = 0;
+	for (size_t i = 0; i < s.size(); i++) {
+		if (s[i] < '0' || s[i] > '9')
+			return false;
+		num = num * 10 + s[i] - '0';
 	}
-	return ret;
+	return true;
 }
 
 void PhoneBook::Search() {
@@ -101,18 +90,20 @@ void PhoneBook::Search() {
 		std::cout << "|      index | first name |  last name |   nickname |\n";
 		std::cout << "+------------+------------+------------+------------+\n";
 		for (int i = 0 ; i < count; i++) {
-			std::cout << "| " << convertString(i)
-					<< " | " << convertString(this->contact[i].GetFirstName())
-					<< " | " << convertString(this->contact[i].GetLastName())
-					<< " | " << convertString(this->contact[i].GetNickname())
-					<< " |" << std::endl;
+			std::cout << "| " << std::setw(MAX_LEN_COLUMN) << std::setfill(' ') << convertString(i)
+			<< " | " << std::setw(MAX_LEN_COLUMN) << std::setfill(' ') << convertString(this->contact[i].GetFirstName())
+			<< " | " << std::setw(MAX_LEN_COLUMN) << std::setfill(' ') << convertString(this->contact[i].GetLastName())
+			<< " | " << std::setw(MAX_LEN_COLUMN) << std::setfill(' ') << convertString(this->contact[i].GetNickname())
+			<< " |\n";
 		}
 		std::cout << "+------------+------------+------------+------------+\n";
 		std::cout << "Which index of contacts do you want to check? ";
-		std::cin >> index;
+		std::string input;
+		getline(std::cin, input);
+		if (input == "" || !_stoi(index, input))
+			index = -1;
 	} while(!std::cin.eof() && (index < 0 || index >= count));
 	if (std::cin.eof())
 		return;
-	std::cin.ignore();
 	this->contact[index].PrintContactData();
 }
