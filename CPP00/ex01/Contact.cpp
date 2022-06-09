@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:56:14 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/09 13:47:03 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/09 23:05:00 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ std::string Contact::GetDarkestSecret() {
 }
 
 void Contact::PrintContactData() {
-	std::cout << "first name: " << this->firstName << '\n';
-	std::cout << "last name: " << this->lastName << '\n';
-	std::cout << "nickname: " << this->nickname << '\n';
-	std::cout << "phone number: " << this->phoneNumber << '\n';
-	std::cout << "darkest secret: " << this->darkestSecret << '\n';
+	std::cout << "first name: " << this->GetFirstName() << '\n';
+	std::cout << "last name: " << this->GetLastName() << '\n';
+	std::cout << "nickname: " << this->GetNickname() << '\n';
+	std::cout << "phone number: " << this->GetPhoneNumber() << '\n';
+	std::cout << "darkest secret: " << this->GetPhoneNumber() << '\n';
 }
