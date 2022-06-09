@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 14:55:58 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/08 15:26:26 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/10 03:45:11 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ private:
 
 public:
 	PhoneBook() {
-		count = 0;
-		oldest = 0;
+		this->count = 0;
+		this->oldest = 0;
 	}
 	void Add();
 	void Search();
