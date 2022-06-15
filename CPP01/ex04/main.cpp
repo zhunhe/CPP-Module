@@ -6,12 +6,13 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 14:59:54 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/15 16:39:59 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/15 19:25:33 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
 static bool readFile(std::string &str, const std::string &filename) {
 	std::ifstream file;
@@ -31,20 +32,15 @@ static bool readFile(std::string &str, const std::string &filename) {
 	return true;
 }
 
-static std::string replacePattern(const std::string &source, const std::string &pattern, const std::string &to) {
-	std::string result = "";
-	size_t i = 0;
-	const int s1_len = pattern.size();
-	while (i < source.size()) {
-		if (source.substr(i, s1_len) == pattern) {
-			result += to;
-			i += s1_len;
-		} else {
-			result += source[i];
-			++i;
-		}
+static void ft_replace(std::string &str, const std::string &pattern, const std::string &replace) {
+	size_t n, start = 0;
+
+	while ((n = str.find(pattern, start)) != std::string::npos)
+	{
+		str.erase(n, pattern.length());
+		str.insert(n, replace);
+		start = n + replace.length();
 	}
-	return result;
 }
 
 static bool writeFile(const std::string &str, const std::string &filename) {
@@ -69,7 +65,7 @@ int main(int argc, char **argv) {
 	std::string str = "";
 	if (!readFile(str, filename))
 		return 1;
-	str = replacePattern(str, s1, s2);
+	ft_replace(str, s1, s2);
 	if (!writeFile(str, filename))
 		return 1;
 	return 0;
