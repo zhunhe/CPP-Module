@@ -6,11 +6,12 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 03:28:04 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/13 17:24:10 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/15 19:08:14 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 #include "Zombie.hpp"
 
 template <typename T>
@@ -31,6 +32,13 @@ int main() {
 	if (alee != NULL)
 		alee->announce();
 
-	randomChump("juhur");
+	static const std::string zombies[4] = {
+		"kalee",
+		"min-jo",
+		"jae-kim",
+		"juhur"
+	};
+	for (int i = 0; i < 10; i++)
+		randomChump(zombies[rand() % 4]);
 	return 0;
 }
