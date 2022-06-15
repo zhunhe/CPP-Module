@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 18:54:55 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/13 19:14:53 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/15 14:30:33 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 #include "HumanA.hpp"
 #include "Weapon.hpp"
 
-HumanA::HumanA(std::string name, Weapon weapon) {
+HumanA::HumanA(std::string name, Weapon &weapon) : weapon(weapon) {
 	this->name = name;
-	this->weapon = weapon;
 }
 
 void HumanA::attack(void) {
