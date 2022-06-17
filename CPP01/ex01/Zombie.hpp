@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 17:37:46 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/13 18:00:35 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/17 17:08:46 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class Zombie {
 private:
 	std::string name;
 public:
+	Zombie();
 	void setZombieName(std::string name);
 	void announce(void);
 };
