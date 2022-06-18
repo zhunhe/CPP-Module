@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:00:05 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/17 12:23:51 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/19 04:35:33 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,47 +16,47 @@
 
 // Default constructor
 Fixed::Fixed() {
-	std::cout << "Default constructor called\n";
-	this->fixedNumber = 0;
+  std::cout << "Default constructor called\n";
+  this->raw = 0;
 }
 
-Fixed::Fixed(const int fixedNumber) {
-	std::cout << "Int constructor called\n";
-	this->fixedNumber = fixedNumber << this->fractionalPartLength;
+Fixed::Fixed(const int raw) {
+  std::cout << "Int constructor called\n";
+  this->raw = raw << this->fractionalBit;
 }
 
-Fixed::Fixed(const float fixedNumber) {
-	std::cout << "Float constructor called\n";
-	this->fixedNumber = roundf(fixedNumber * (1 << this->fractionalPartLength));
+Fixed::Fixed(const float raw) {
+  std::cout << "Float constructor called\n";
+  this->raw = roundf(raw * (1 << this->fractionalBit));
 }
 
 // Copy constructor
 Fixed::Fixed(const Fixed& fixed) {
-	std::cout << "Copy constructor called\n";
-	*this = fixed;
+  std::cout << "Copy constructor called\n";
+  *this = fixed;
 }
 
 // Copy assignment operator
 Fixed& Fixed::operator=(const Fixed& fixed) {
-	std::cout << "Copy assignment operator called\n";
-	this->fixedNumber = fixed.fixedNumber;
-	return *this;
+  std::cout << "Copy assignment operator called\n";
+  this->raw = fixed.raw;
+  return *this;
 }
 
 // Destructor
 Fixed::~Fixed() {
-	std::cout << "Destructor called\n";
+  std::cout << "Destructor called\n";
 }
 
 float Fixed::toFloat(void) const {
-	return static_cast<float>(this->fixedNumber) / static_cast<float>(1 << this->fractionalPartLength);
+  return static_cast<float>(this->raw) / static_cast<float>(1 << this->fractionalBit);
 }
 
 int Fixed::toInt(void) const {
-	return this->fixedNumber >> this->fractionalPartLength;
+  return this->raw >> this->fractionalBit;
 }
 
 std::ostream &operator<<(std::ostream& os, const Fixed& fixed) {
-	os << fixed.toFloat();
-	return os;
+  os << fixed.toFloat();
+  return os;
 }

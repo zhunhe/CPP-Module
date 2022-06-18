@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 11:18:31 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/16 18:25:52 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/19 04:27:13 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 #include "Fixed.hpp"
 
 int main( void ) {
-	Fixed a;
-	Fixed b(a);
-	Fixed c;
+  Fixed a;
+  Fixed b(a);
+  Fixed c;
 
-	c = b;
+  c = b;
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+  std::cout << a.getRawBits() << std::endl;
+  std::cout << b.getRawBits() << std::endl;
+  std::cout << c.getRawBits() << std::endl;
 
-	return 0;
+  return 0;
 }
