@@ -16,7 +16,7 @@
 class Fixed {
 private:
   int raw;
-  static const int fractionalPartLength = 8;
+  static const int fractionalBit = 8;
 public:
   // Default constructor
   Fixed();
