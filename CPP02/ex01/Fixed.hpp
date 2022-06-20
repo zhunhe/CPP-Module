@@ -13,8 +13,6 @@
 #ifndef CPP02_EX01_FIXED_HPP_
 #define CPP02_EX01_FIXED_HPP_
 
-#include <iostream>
-
 class Fixed {
 private:
   int raw;
