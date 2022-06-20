@@ -61,14 +61,6 @@ static std::string convertString(std::string s) {
 	return s.substr(0, MAX_LEN_COLUMN - 1) + ".";
 }
 
-static std::string convertString(int index) {
-	std::string s = std::to_string(index);
-
-	if (s.length() <= MAX_LEN_COLUMN)
-		return s;
-	return s.substr(0, MAX_LEN_COLUMN - 1) + ".";
-}
-
 static bool	_stoi(int &num, std::string s) {
 	num = 0;
 	for (size_t i = 0; i < s.size(); i++) {
@@ -90,7 +82,7 @@ void PhoneBook::Search() {
 		std::cout << "|      index | first name |  last name |   nickname |\n";
 		std::cout << "+------------+------------+------------+------------+\n";
 		for (int i = 0 ; i < count; i++) {
-			std::cout << "| " << std::setw(MAX_LEN_COLUMN) << std::setfill(' ') << convertString(i)
+			std::cout << "| " << std::setw(MAX_LEN_COLUMN) << std::setfill(' ') << i
 			<< " | " << std::setw(MAX_LEN_COLUMN) << std::setfill(' ') << convertString(this->contact[i].GetFirstName())
 			<< " | " << std::setw(MAX_LEN_COLUMN) << std::setfill(' ') << convertString(this->contact[i].GetLastName())
 			<< " | " << std::setw(MAX_LEN_COLUMN) << std::setfill(' ') << convertString(this->contact[i].GetNickname())
