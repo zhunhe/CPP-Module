@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 13:51:08 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/21 07:53:24 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/21 08:23:48 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::Fixed() {
 
 // constructor
 Fixed::Fixed(int raw) {
-  this->raw = raw;
+  this->raw = raw << this->fractionalBit;
 }
 
 Fixed::Fixed(float raw) {
@@ -51,10 +51,25 @@ bool Fixed::operator==(const Fixed& b) const { return this->raw == b.raw; }
 bool Fixed::operator!=(const Fixed& b) const { return this->raw != b.raw; }
 
 // arithmetic operator
-Fixed Fixed::operator+(const Fixed& b) { this->raw += b.raw; return *this; }
-Fixed Fixed::operator-(const Fixed& b) { this->raw -= b.raw; return *this; }
-Fixed Fixed::operator*(const Fixed& b) { this->raw *= b.raw; return *this; }
-Fixed Fixed::operator/(const Fixed& b) { this->raw /= b.raw; return *this; }
+Fixed Fixed::operator+(const Fixed& b) {
+  this->raw += b.raw;
+  return *this;
+}
+
+Fixed Fixed::operator-(const Fixed& b) {
+  this->raw -= b.raw;
+  return *this;
+}
+
+Fixed Fixed::operator*(const Fixed& b) {
+  this->raw = this->raw * b.raw / (1 << this->fractionalBit);
+  return *this;
+}
+
+Fixed Fixed::operator/(const Fixed& b) {
+  this->raw = this->raw / b.raw * (1 << this->fractionalBit);
+  return *this;
+}
 
 // in[de]crement operator
 Fixed& Fixed::operator++(void) { this->raw += 1; return *this; }

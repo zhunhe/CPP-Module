@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 13:47:49 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/21 07:38:25 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/21 08:23:44 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,5 @@ public:
   static Fixed& max(Fixed& a, Fixed& b);
 };
 
-std::ostream& operator<<(std::ostream& out, const Fixed& value);
+std::ostream& operator<<(std::ostream& os, const Fixed& value);
 #endif
