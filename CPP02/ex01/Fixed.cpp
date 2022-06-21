@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:00:05 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/19 04:35:33 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/21 07:45:40 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ Fixed::~Fixed() {
 }
 
 float Fixed::toFloat(void) const {
-  return static_cast<float>(this->raw) / static_cast<float>(1 << this->fractionalBit);
+  return static_cast<float>(this->raw) / (1 << this->fractionalBit);
 }
 
 int Fixed::toInt(void) const {

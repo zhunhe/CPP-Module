@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 11:29:46 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/19 04:29:36 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/21 07:39:04 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
   // Copy constructor
   Fixed(const Fixed& fixed);
   // Copy assignment operator
-  Fixed& operator= (const Fixed& fixed);
+  Fixed& operator=(const Fixed& fixed);
   // Destructor
   ~Fixed();
 

@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 13:47:49 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/19 04:38:04 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/21 07:38:25 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,6 @@ public:
 
   int toInt(void) const;
   float toFloat(void) const;
-
-  int getRawBits(void) const;
-  void setRawBits(const int raw);
 
   static const Fixed& min(const Fixed& a, const Fixed& b);
   static Fixed& min(Fixed& a, Fixed& b);

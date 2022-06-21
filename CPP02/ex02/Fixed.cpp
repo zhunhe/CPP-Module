@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 13:51:08 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/19 05:13:42 by juhur            ###   ########.fr       */
+/*   Updated: 2022/06/21 07:53:24 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@
 // Default constructor
 Fixed::Fixed() {
   this->raw = 0;
+}
+
+// constructor
+Fixed::Fixed(int raw) {
+  this->raw = raw;
+}
+
+Fixed::Fixed(float raw) {
+  this->raw = roundf(raw * (1 << this->fractionalBit));
 }
 
 // Copy constructor
@@ -32,15 +41,6 @@ Fixed& Fixed::operator=(const Fixed& fixed) {
 
 // Destructor
 Fixed::~Fixed() {}
-
-// constructor
-Fixed::Fixed(int raw) {
-  this->raw = raw;
-}
-
-Fixed::Fixed(float raw) {
-  this->raw = roundf(raw * (1 << this->fractionalBit));
-}
 
 // comparison operator
 bool Fixed::operator<(const Fixed& b) const { return this->raw < b.raw; }
@@ -67,8 +67,8 @@ int Fixed::toInt(void) const {
 }
 
 float Fixed::toFloat(void) const {
-  return (static_cast<float>(this->raw) / (1 << this->fractionalBit));
-} 
+  return static_cast<float>(this->raw) / (1 << this->fractionalBit);
+}
 
 Fixed& Fixed::min(Fixed& a, Fixed& b) {
   return a.raw < b.raw ? a : b;
