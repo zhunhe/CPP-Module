@@ -6,13 +6,13 @@
 #    By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 18:37:08 by juhur             #+#    #+#              #
-#    Updated: 2022/06/17 11:49:33 by juhur            ###   ########.fr        #
+#    Updated: 2022/07/10 01:18:40 by juhur            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = \
 	main.cpp \

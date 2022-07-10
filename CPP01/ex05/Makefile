@@ -6,13 +6,13 @@
 #    By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 16:58:58 by juhur             #+#    #+#              #
-#    Updated: 2022/06/15 17:34:28 by juhur            ###   ########.fr        #
+#    Updated: 2022/07/10 01:18:26 by juhur            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Harl_2.0
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = \
 	main.cpp \
