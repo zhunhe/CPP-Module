@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 13:51:08 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/21 08:23:48 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/13 05:40:11 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ Fixed Fixed::operator*(const Fixed& b) {
 }
 
 Fixed Fixed::operator/(const Fixed& b) {
+  if (b.raw == 0)
+    throw b;
   this->raw = this->raw / b.raw * (1 << this->fractionalBit);
   return *this;
 }
