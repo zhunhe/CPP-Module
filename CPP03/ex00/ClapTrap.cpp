@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 08:35:33 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/13 04:57:01 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/13 05:02:56 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,6 @@ void ClapTrap::attack(const std::string& target) {
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-  if (amount == 0)
-    return;
   if (this->hitPoint == 0)  // already dead
     std::cout << ", but " << this->name << " is already dead\n";
   else {
@@ -115,12 +113,13 @@ void ClapTrap::takeDamage(unsigned int amount) {
       this->hitPoint -= amount;
     std::cout << "LEFT HP[" << this->hitPoint << "]";
     if (this->hitPoint == 0)
-      std::cout << " " << this->name << " dead\n";
+      std::cout << " " << this->name << " dead";
+    std::cout << '\n';
   }
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-  std::cout << this->name << " repairs itself BEFORE HP[" << this->hitPoint << "]";
+  std::cout << this->name << " repairs itself BEFORE HP[" << this->hitPoint << "] amount[" << amount << "]";
   const unsigned int beforeHP = this->hitPoint;
   if (this->hitPoint + amount < beforeHP)
     this->hitPoint = UINT_MAX;
