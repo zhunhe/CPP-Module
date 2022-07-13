@@ -6,12 +6,12 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 08:29:55 by juhur             #+#    #+#             */
-/*   Updated: 2022/06/20 09:22:26 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/13 07:21:56 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CPP03_EX00_CLAPTRAP_
-#define CPP03_EX00_CLAPTRAP_
+#ifndef CPP03_EX00_CLAPTRAP_HPP_
+#define CPP03_EX00_CLAPTRAP_HPP_
 
 #include <string>
 
