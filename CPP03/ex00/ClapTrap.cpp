@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 08:35:33 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/11 07:27:12 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/13 04:57:01 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap() {
   this->name = "anonymous";
   this->hitPoint = 10;
   this->energyPoint = 10;
-  this->attackDamage = 10;
+  this->attackDamage = 0;
 }
 
 // Constructor
@@ -29,7 +29,7 @@ ClapTrap::ClapTrap(std::string name) {
   this->name = name;
   this->hitPoint = 10;
   this->energyPoint = 10;
-  this->attackDamage = 10;
+  this->attackDamage = 0;
 }
 
 // Copy constructor
