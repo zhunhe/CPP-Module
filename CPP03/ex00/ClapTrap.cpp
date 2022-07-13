@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 08:35:33 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/13 05:02:56 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/13 07:13:58 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,35 +55,43 @@ ClapTrap::~ClapTrap() {
 
 // Getter
 const std::string& ClapTrap::getName(void) const {
+  std::cout << " (" << __func__ << " is called) ";
   return this->name;
 }
 
 const unsigned int& ClapTrap::getHitPoint(void) const {
+  std::cout << " (" << __func__ << " is called) ";
   return this->hitPoint;
 }
 
 const unsigned int& ClapTrap::getEnergyPoint(void) const {
+  std::cout << " (" << __func__ << " is called) ";
   return this->energyPoint;
 }
 
 const unsigned int& ClapTrap::getAttackDamage(void) const {
+  std::cout << " (" << __func__ << " is called) ";
   return this->attackDamage;
 }
 
 // Setter
 void ClapTrap::setName(std::string name) {
+  std::cout << __func__ << "(" << name << ") is called\n";
   this->name = name;
 }
 
 void ClapTrap::setHitPoint(unsigned int hitPoint) {
+  std::cout << __func__ << "(" << hitPoint << ") is called\n";
   this->hitPoint = hitPoint;
 }
 
 void ClapTrap::setEnergyPoint(unsigned int energyPoint) {
+  std::cout << __func__ << "(" << energyPoint << ") is called\n";
   this->energyPoint = energyPoint;
 }
 
 void ClapTrap::setAttackDamage(unsigned int attackDamage) {
+  std::cout << __func__ << "(" << attackDamage << ") is called\n";
   this->attackDamage = attackDamage;
 }
 
