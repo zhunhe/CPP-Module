@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 08:29:55 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/13 07:21:56 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/14 15:16:54 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ public:
   // Default constructor
   ClapTrap();
   // Copy constructor
-  ClapTrap(const ClapTrap& clapTrap);
+  ClapTrap(const ClapTrap& obj);
   // Copy assignment operator
-  ClapTrap& operator=(const ClapTrap& clapTrap);
+  ClapTrap& operator=(const ClapTrap& obj);
   // Destructor
   ~ClapTrap();
 
