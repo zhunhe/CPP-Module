@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 08:35:33 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/14 15:33:35 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/14 21:24:54 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ ClapTrap::ClapTrap(std::string name)
 
 // Copy constructor
 ClapTrap::ClapTrap(const ClapTrap& obj) {
-  std::cout << "Copy constructor " << __func__ << "(" << this->name << ") is called\n";
   *this = obj;
+  std::cout << "Copy constructor " << __func__ << "(" << this->name << ") is called\n";
 }
 
 // Copy assignment operator
