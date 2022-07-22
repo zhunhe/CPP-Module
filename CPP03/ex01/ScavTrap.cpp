@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 14:56:26 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/14 15:34:29 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/22 04:43:09 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,21 @@
 
 // Default constructor
 ScavTrap::ScavTrap()
-  : ClapTrap() {
-  this->setHitPoint(100);
-  this->setEnergyPoint(50);
-  this->setAttackDamage(20);
+  : ClapTrap("anonymous", 100, 50, 20) {
   std::cout << "Default constructor " << __func__ << " is called\n";
 }
 
 // Constructor
 ScavTrap::ScavTrap(std::string name)
-  : ClapTrap(name) {
-  this->setHitPoint(100);
-  this->setEnergyPoint(50);
-  this->setAttackDamage(20);
+  : ClapTrap(name, 100, 50, 20) {
   std::cout << "Constructor " << __func__ << "(" << this->name << ") is called\n";
 }
 
 // Copy constructor
 ScavTrap::ScavTrap(const ScavTrap& obj)
   : ClapTrap(obj) {
-    std::cout << "Copy constructor " << __func__ << "(" << this->name << ") is called\n";
   *this = obj;
+  std::cout << "Copy constructor " << __func__ << "(" << this->name << ") is called\n";
 }
 
 // Copy assignment operator

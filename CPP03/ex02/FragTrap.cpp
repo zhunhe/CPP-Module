@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:40:19 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/14 15:41:44 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/20 08:23:55 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,13 @@
 
 // Default constructor
 FragTrap::FragTrap()
-  : ClapTrap() {
-  this->setHitPoint(100);
-  this->setEnergyPoint(100);
-  this->setAttackDamage(30);
+  : ClapTrap("anonymous", 100, 100, 30) {
   std::cout << "Default constructor " << __func__ << " is called\n";
 }
 
 // Constructor
 FragTrap::FragTrap(std::string name)
-  : ClapTrap(name) {
-  this->setHitPoint(100);
-  this->setEnergyPoint(100);
-  this->setAttackDamage(30);
+  : ClapTrap(name, 100, 100, 30) {
   std::cout << "Constructor " << __func__ << "(" << this->name << ") is called\n";
 }
 

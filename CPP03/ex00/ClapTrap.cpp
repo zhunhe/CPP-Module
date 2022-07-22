@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 08:35:33 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/14 14:48:52 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/20 04:37:40 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,29 @@ ClapTrap::~ClapTrap() {
 
 // Getter & Setter
 const std::string& ClapTrap::getName(void) const { return this->name; }
-void ClapTrap::setName(std::string name) { this->name = name; }
-
 const unsigned int& ClapTrap::getHitPoint(void) const { return this->hitPoint; }
-void ClapTrap::setHitPoint(unsigned int hitPoint) { this->hitPoint = hitPoint; }
-
 const unsigned int& ClapTrap::getEnergyPoint(void) const { return this->energyPoint; }
-void ClapTrap::setEnergyPoint(unsigned int energyPoint) { this->energyPoint = energyPoint; }
-
 const unsigned int& ClapTrap::getAttackDamage(void) const { return this->attackDamage; }
-void ClapTrap::setAttackDamage(unsigned int attackDamage) { this->attackDamage = attackDamage; }
+
+void ClapTrap::setName(std::string name) {
+  std::cout << __func__ << "() is called " << this->name << " -> " << name << std::endl;
+  this->name = name;
+}
+
+void ClapTrap::setHitPoint(unsigned int hitPoint) {
+  std::cout << __func__ << "() is called " << this->hitPoint << " -> " << hitPoint << std::endl;
+  this->hitPoint = hitPoint;
+}
+
+void ClapTrap::setEnergyPoint(unsigned int energyPoint) {
+  std::cout << __func__ << "() is called " << this->energyPoint << " -> " << energyPoint << std::endl;
+  this->energyPoint = energyPoint;
+}
+
+void ClapTrap::setAttackDamage(unsigned int attackDamage) {
+  std::cout << __func__ << "() is called " << this->attackDamage << " -> " << attackDamage << std::endl;
+  this->attackDamage = attackDamage;
+}
 
 void ClapTrap::attack(const std::string& target) {
   if (this->hitPoint == 0) {  // ATTACKER's HP is 0

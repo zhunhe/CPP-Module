@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 08:29:55 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/14 15:37:14 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/20 09:01:44 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ protected:
   unsigned int hitPoint;
   unsigned int energyPoint;
   unsigned int attackDamage;
+
+  ClapTrap(std::string name, int hitPoint, int energyPoint, int attackDamage);
 public:
   // Default constructor
   ClapTrap();
