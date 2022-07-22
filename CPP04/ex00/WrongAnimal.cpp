@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 09:27:09 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/15 09:27:46 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/22 10:37:37 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,15 @@ WrongAnimal::WrongAnimal()
 
 // Copy constructor
 WrongAnimal::WrongAnimal(const WrongAnimal& obj) {
+  std::cout << "Copy constructor " << __func__ << "(" << obj.type << ") is called\n";
   *this = obj;
-  std::cout << "Copy constructor " << __func__ << "(" << this->type << ") is called\n";
 }
 
 // Copy assignment operator
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& obj) {
   std::cout << "Copy assignment operator (WrongAnimal) is called\n";
-  this->type = obj.type;
+  if (this != &obj)
+    this->type = obj.type;
   return *this;
 }
 
