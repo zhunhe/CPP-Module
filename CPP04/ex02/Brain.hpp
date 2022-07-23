@@ -6,12 +6,12 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 10:45:51 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/15 10:48:20 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/23 05:02:31 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CPP04_EX01_BRAIN_HPP_
-#define CPP04_EX01_BRAIN_HPP_
+#ifndef CPP04_EX02_BRAIN_HPP_
+#define CPP04_EX02_BRAIN_HPP_
 
 #include <string>
 

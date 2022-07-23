@@ -6,12 +6,12 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 20:36:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/15 10:56:18 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/23 05:02:35 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CPP04_EX01_CAT_HPP_
-#define CPP04_EX01_CAT_HPP_
+#ifndef CPP04_EX02_CAT_HPP_
+#define CPP04_EX02_CAT_HPP_
 
 #include "Animal.hpp"
 #include "Brain.hpp"
