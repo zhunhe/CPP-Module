@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 03:26:48 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/23 04:58:12 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/23 05:20:29 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ Bureaucrat::~Bureaucrat() {
 const std::string& Bureaucrat::getName() const { return this->name; }
 const int& Bureaucrat::getGrade() const { return this->grade; }
 
+// Grade up & down
 void Bureaucrat::gradeUp() {
   std::cout << __func__ << "() is called " << this->name << "'s ";
   if (this->grade <= Bureaucrat::highestGrade)
@@ -76,14 +77,11 @@ void Bureaucrat::gradeDown() {
   std::cout << this->grade << std::endl;
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw() {
-  return "grade is too high";
-}
+// Error exception
+const char* Bureaucrat::GradeTooHighException::what() const throw() { return "grade is too high"; }
+const char* Bureaucrat::GradeTooLowException::what() const throw() { return "grade is too low"; }
 
-const char* Bureaucrat::GradeTooLowException::what() const throw() {
-  return "grade is too low";
-}
-
+// Insertion operator
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj) {
   os << obj.getName() << "'s grade is " << obj.getGrade();
   return os;
