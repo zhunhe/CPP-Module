@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 13:47:00 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/18 13:20:03 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/23 07:59:26 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main(void) {
       e = c / d;
       std::cout << e << std::endl;
     } catch (Fixed exception) {
-      std::cout << "[ERROR] divider is " << exception << std::endl;
+      std::cerr << "[ERROR] divider is " << exception << std::endl;
     }
   }
   return 0;

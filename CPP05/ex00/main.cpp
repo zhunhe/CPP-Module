@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 03:01:35 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/23 04:59:51 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/23 07:59:49 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main() {
       juhur.gradeUp();
       std::cout << juhur << std::endl;
     } catch (std::exception& e) {
-      std::cout << e.what() << std::endl;
+      std::cerr << e.what() << std::endl;
     }
   }
   std::cout << "--------------------\n";
@@ -32,7 +32,7 @@ int main() {
       juhur2.gradeDown();
       std::cout << juhur2 << std::endl;
     } catch (std::exception& e) {
-      std::cout << e.what() << std::endl;
+      std::cerr << e.what() << std::endl;
     }
   }
   std::cout << "--------------------\n";
@@ -42,7 +42,7 @@ int main() {
       juhur.gradeUp();
       std::cout << juhur << std::endl;
     } catch (std::exception& e) {
-      std::cout << e.what() << std::endl;
+      std::cerr << e.what() << std::endl;
     }
   }
   std::cout << "--------------------\n";
@@ -52,7 +52,7 @@ int main() {
       juhur.gradeUp();
       std::cout << juhur << std::endl;
     } catch (std::exception& e) {
-      std::cout << e.what() << std::endl;
+      std::cerr << e.what() << std::endl;
     }
   }
   std::cout << "--------------------\n";
@@ -62,7 +62,7 @@ int main() {
       juhur.gradeDown();
       std::cout << juhur << std::endl;
     } catch (std::exception& e) {
-      std::cout << e.what() << std::endl;
+      std::cerr << e.what() << std::endl;
     }
   }
   return 0;
