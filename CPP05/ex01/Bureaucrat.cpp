@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 03:26:48 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/23 07:52:52 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/23 09:42:06 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void Bureaucrat::signForm(bool signStatus, std::string form) {
   if (signStatus)
     std::cout << " signed " << form;
   else
-    std::cout << " couldn't sign [" << form << "] because grade is not high enough";
+    std::cout << " couldn't sign [" << form << "] because grade is too low";
   std::cout << std::endl;
 }
 
