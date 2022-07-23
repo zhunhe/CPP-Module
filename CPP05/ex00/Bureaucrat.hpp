@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 03:15:20 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/23 05:18:57 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/23 05:28:28 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
 
   // Getter
   const std::string& getName() const;
-  const int& getGrade() const;
+  int getGrade() const;
 
   // Grade up & down
   void gradeUp();

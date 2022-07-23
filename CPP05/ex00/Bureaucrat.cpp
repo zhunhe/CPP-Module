@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 03:26:48 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/23 05:20:29 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/23 05:28:34 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ Bureaucrat::~Bureaucrat() {
 
 // Getter
 const std::string& Bureaucrat::getName() const { return this->name; }
-const int& Bureaucrat::getGrade() const { return this->grade; }
+int Bureaucrat::getGrade() const { return this->grade; }
 
 // Grade up & down
 void Bureaucrat::gradeUp() {
