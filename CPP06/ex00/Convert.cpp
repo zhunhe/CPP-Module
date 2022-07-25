@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 10:32:24 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/24 12:39:25 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/25 07:22:40 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ void Convert::printAll() {
 
 void Convert::printChar() {
   std::cout << "char: ";
-  if (this->type == TYPE_ERROR || this->type == TYPE_NAN || this->type == TYPE_INT_OVERFLOW || !isascii(this->c))
+  if (this->type == TYPE_ERROR || this->type == TYPE_INT_OVERFLOW || !isascii(this->c))
     std::cout << "impossible";
   else if (!isprint(this->c))
     std::cout << "Non displayable";
@@ -139,7 +139,7 @@ void Convert::printChar() {
 
 void Convert::printInt() {
   std::cout << "int: ";
-  if ((this->type == TYPE_ERROR || this->type == TYPE_NAN || this->type == TYPE_INT_OVERFLOW)
+  if ((this->type == TYPE_ERROR || this->type == TYPE_INT_OVERFLOW)
   || (this->i > std::numeric_limits<int>::max())
   || (this->i < std::numeric_limits<int>::min()))
     std::cout << "impossible";
@@ -152,8 +152,6 @@ void Convert::printFloat() {
   std::cout << "float: ";
   if (this->type == TYPE_ERROR || this->type == TYPE_INT_OVERFLOW)
     std::cout << "impossible";
-  else if (this->type == TYPE_NAN)
-    std::cout << "nanf";
   else
     std::cout << std::fixed << std::setprecision(1) << this->f << "f";
   std::cout << std::endl;
@@ -163,8 +161,6 @@ void Convert::printDouble() {
   std::cout << "double: ";
   if (this->type == TYPE_ERROR || this->type == TYPE_INT_OVERFLOW)
     std::cout << "impossible";
-  else if (this->type == TYPE_NAN)
-    std::cout << "nan";
   else
     std::cout << std::fixed << std::setprecision(1) << this->d;
   std::cout << std::endl;

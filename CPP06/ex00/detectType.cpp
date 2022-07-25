@@ -6,14 +6,13 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 06:18:57 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/25 06:14:56 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/25 07:24:39 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include <cstring>
 #include <limits>
-#include <cmath>
 #include "detectType.hpp"
 
 static bool isChar(std::string str) {
@@ -56,9 +55,7 @@ static bool isDouble(std::string str) {
 
 int detectType(std::string str) {
   int type;
-  
-  if (str == "nan" || str == "nanf")
-    return TYPE_NAN;
+
   if (str.empty())
     return TYPE_ERROR;
   if (isChar(str))

@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 06:19:19 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/24 12:13:52 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/25 07:21:48 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 enum {
   TYPE_ERROR = 0,
-  TYPE_NAN,
   TYPE_CHAR,
   TYPE_INT,
   TYPE_INT_OVERFLOW,
