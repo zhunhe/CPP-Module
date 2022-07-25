@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 10:45:51 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/15 10:48:20 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/25 05:33:42 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ public:
   Brain& operator=(const Brain& obj);
   // Destructor
   ~Brain();
+
+  // Constructor
+  Brain(std::string idea);
+
+  // Print
+  void printIdeas() const;
 };
 
 #endif

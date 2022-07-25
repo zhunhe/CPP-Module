@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 20:36:07 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/15 10:56:18 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/25 05:32:08 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,14 @@ public:
   // Destructor
   virtual ~Cat();
 
+  // Constructor
+  Cat(std::string idea);
+
+  // Getter
+  Brain* getBrain() const;
+
   virtual void makeSound() const;
+
 };
 
 #endif

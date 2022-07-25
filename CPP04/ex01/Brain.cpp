@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 10:49:48 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/23 03:03:10 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/25 05:37:25 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 // Default constructor
 Brain::Brain() {
   std::cout << "Default constructor " << __func__ << " is called\n";
+}
+
+// Constructor
+Brain::Brain(std::string idea) {
+  std::cout << "Constructor " << __func__ << "(" << idea << ") is called\n";
+  for (int i = 0; i < 100; i++)
+    this->ideas[i] = idea;
 }
 
 // Copy constructor
@@ -36,4 +43,10 @@ Brain& Brain::operator=(const Brain& obj) {
 // Destructor
 Brain::~Brain() {
   std::cout << "Destructor " << __func__ << " is called\n";
+}
+
+// Print
+void Brain::printIdeas() const {
+  for (int i = 0; i < 100; i++)
+    std::cout << i + 1 << "st " << this->ideas[i] << std::endl;
 }
