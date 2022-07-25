@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 06:18:57 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/24 12:34:05 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/25 06:14:56 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int detectType(std::string str) {
   
   if (str == "nan" || str == "nanf")
     return TYPE_NAN;
+  if (str.empty())
+    return TYPE_ERROR;
   if (isChar(str))
     return TYPE_CHAR;
   if (TYPE_ERROR != (type = isInt(str)))
