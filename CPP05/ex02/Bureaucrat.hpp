@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 03:15:20 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/23 09:00:41 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/27 06:29:53 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ public:
   void gradeDown();
 
   // Sign
-  void signForm(bool signStatus, std::string form);
+  void signForm(Form& form);
 
   void executeForm(Form const& form);
 

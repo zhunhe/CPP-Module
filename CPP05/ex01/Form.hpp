@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 05:01:40 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/23 06:46:12 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/27 06:31:09 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <string>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
 private:
@@ -50,6 +52,10 @@ public:
   };
 
   class GradeTooLowException : public std::exception {
+    virtual const char* what() const throw();
+  };
+
+  class AlreadySignedException : public std::exception {
     virtual const char* what() const throw();
   };
 };

@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 05:13:48 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/23 06:50:51 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/27 06:22:49 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,17 @@ int Form::getGradeForExecute() const { return this->gradeForExecute; }
 
 // Sign
 void Form::beSigned(Bureaucrat& obj) {
-  if (obj.getGrade() <= this->gradeForSign)
-    this->signState = true;
-  obj.signForm(this->signState, this->getName());
+  if (this->signState)
+    throw Form::AlreadySignedException();
   if (obj.getGrade() > this->gradeForSign)
     throw Form::GradeTooLowException();
+  this->signState = true;
 }
 
 // Error exception
 const char* Form::GradeTooHighException::what() const throw() { return "grade is too high"; }
 const char* Form::GradeTooLowException::what() const throw() { return "grade is too low"; }
+const char* Form::AlreadySignedException::what() const throw() { return "already signed"; }
 
 // Insertion operator
 std::ostream& operator<<(std::ostream& os, const Form& obj) {

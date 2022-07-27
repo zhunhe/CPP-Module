@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 03:01:35 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/23 07:58:29 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/27 06:26:10 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 int main() {
   std::cout << "--------------------" << std::endl;
   {
-    Form form("form1", 55, 55);
-    std::cout << form << std::endl;
-
-    Bureaucrat juhur("juhur", 3);
     try {
-      form.beSigned(juhur);
+      Form form("form1", 55, 55);
+      std::cout << form << std::endl;
+
+      Bureaucrat juhur("juhur", 3);
+      juhur.signForm(form);
+      juhur.signForm(form);
       std::cout << form << std::endl;
     } catch (std::exception& e) {
       std::cerr << e.what() << std::endl;
@@ -29,12 +30,12 @@ int main() {
   }
   std::cout << "--------------------" << std::endl;
   {
-    Form form("form1", 55, 55);
-    std::cout << form << std::endl;
-
-    Bureaucrat juhur("juhur", 56);
     try {
-      form.beSigned(juhur);
+      Form form("form1", 55, 55);
+      std::cout << form << std::endl;
+
+      Bureaucrat juhur("juhur", 56);
+      juhur.signForm(form);
       std::cout << form << std::endl;
     } catch (std::exception& e) {
       std::cerr << e.what() << std::endl;
@@ -47,7 +48,7 @@ int main() {
       std::cout << form << std::endl;
 
       Bureaucrat juhur("juhur", 56);
-      form.beSigned(juhur);
+      juhur.signForm(form);
       std::cout << form << std::endl;
     } catch (std::exception& e) {
       std::cerr << e.what() << std::endl;
@@ -55,11 +56,11 @@ int main() {
   }
   std::cout << "--------------------" << std::endl;
   {
-    Form form("form1", 55, 55);
-    std::cout << form << std::endl;
     try {
+      Form form("form1", 55, 55);
+      std::cout << form << std::endl;
       Bureaucrat juhur("juhur", -1);
-      form.beSigned(juhur);
+      juhur.signForm(form);
       std::cout << form << std::endl;
     } catch (std::exception& e) {
       std::cerr << e.what() << std::endl;

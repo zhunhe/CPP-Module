@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 03:26:48 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/23 09:42:06 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/27 06:38:47 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,13 +78,13 @@ void Bureaucrat::gradeDown() {
 }
 
 // Sign
-void Bureaucrat::signForm(bool signStatus, std::string form) {
-  std::cout << this->name;
-  if (signStatus)
-    std::cout << " signed " << form;
-  else
-    std::cout << " couldn't sign [" << form << "] because grade is too low";
-  std::cout << std::endl;
+void Bureaucrat::signForm(Form& form) {
+  try {
+    form.beSigned(*this);
+    std::cout << this->name << " signed [" << form.getName() << "]" << std::endl;
+  } catch (const std::exception& e) {
+    std::cerr << this->name << " couldn't sign [" << form.getName() << "] because " << e.what() << std::endl;
+  }
 }
 
 // Error exception

@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 03:01:35 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/23 10:15:17 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/27 06:40:24 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main() {
     try {
       ShrubberyCreationForm shrubbery("Tree");
       Bureaucrat juhur("juhur", 3);
-      shrubbery.beSigned(juhur);
+      juhur.signForm(shrubbery);
 
       std::cout << shrubbery << std::endl;
       juhur.executeForm(shrubbery);
@@ -35,7 +35,7 @@ int main() {
     try {
       ShrubberyCreationForm shrubbery("Tree");
       Bureaucrat juhur("juhur", 146);
-      shrubbery.beSigned(juhur);
+      juhur.signForm(shrubbery);
 
       std::cout << shrubbery << std::endl;
       juhur.executeForm(shrubbery);
@@ -48,7 +48,7 @@ int main() {
     try {
       ShrubberyCreationForm shrubbery("Tree");
       Bureaucrat juhur("juhur", 140);
-      shrubbery.beSigned(juhur);
+      juhur.signForm(shrubbery);
 
       std::cout << shrubbery << std::endl;
       juhur.executeForm(shrubbery);
@@ -61,7 +61,7 @@ int main() {
     try {
       ShrubberyCreationForm shrubbery("Tree");
       Bureaucrat juhur("juhur", 3);
-      // shrubbery.beSigned(juhur);
+      // juhur.signForm(shrubbery);
 
       std::cout << shrubbery << std::endl;
       juhur.executeForm(shrubbery);
@@ -74,7 +74,7 @@ int main() {
     try {
       RobotomyRequestForm roboto("RobotoForm");
       Bureaucrat juhur("juhur", 3);
-      roboto.beSigned(juhur);
+      juhur.signForm(roboto);
 
       std::cout << roboto << std::endl;
       juhur.executeForm(roboto);
@@ -87,7 +87,7 @@ int main() {
     try {
       RobotomyRequestForm roboto("RobotoForm");
       Bureaucrat juhur("juhur", 73);
-      roboto.beSigned(juhur);
+      juhur.signForm(roboto);
 
       std::cout << roboto << std::endl;
       juhur.executeForm(roboto);
@@ -100,7 +100,7 @@ int main() {
     try {
       RobotomyRequestForm roboto("RobotoForm");
       Bureaucrat juhur("juhur", 46);
-      roboto.beSigned(juhur);
+      juhur.signForm(roboto);
 
       std::cout << roboto << std::endl;
       juhur.executeForm(roboto);
@@ -113,7 +113,7 @@ int main() {
     try {
       RobotomyRequestForm roboto("RobotoForm");
       Bureaucrat juhur("juhur", 3);
-      // roboto.beSigned(juhur);
+      // juhur.signForm(roboto);
 
       std::cout << roboto << std::endl;
       juhur.executeForm(roboto);
@@ -126,7 +126,7 @@ int main() {
     try {
       PresidentialPardonForm president("PresidentialForm");
       Bureaucrat juhur("juhur", 3);
-      president.beSigned(juhur);
+      juhur.signForm(president);
 
       std::cout << president << std::endl;
       juhur.executeForm(president);
@@ -139,7 +139,7 @@ int main() {
     try {
       PresidentialPardonForm president("PresidentialForm");
       Bureaucrat juhur("juhur", 26);
-      president.beSigned(juhur);
+      juhur.signForm(president);
 
       std::cout << president << std::endl;
       juhur.executeForm(president);
@@ -152,7 +152,7 @@ int main() {
     try {
       PresidentialPardonForm president("PresidentialForm");
       Bureaucrat juhur("juhur", 6);
-      president.beSigned(juhur);
+      juhur.signForm(president);
 
       std::cout << president << std::endl;
       juhur.executeForm(president);
@@ -165,7 +165,7 @@ int main() {
     try {
       PresidentialPardonForm president("PresidentialForm");
       Bureaucrat juhur("juhur", 3);
-      // president.beSigned(juhur);
+      // juhur.signForm(president);
 
       std::cout << president << std::endl;
       juhur.executeForm(president);

@@ -6,12 +6,12 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 03:15:20 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/27 06:18:54 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/27 07:47:15 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CPP05_EX01_BUREAUCRAT_HPP_
-#define CPP05_EX01_BUREAUCRAT_HPP_
+#ifndef CPP05_EX03_BUREAUCRAT_HPP_
+#define CPP05_EX03_BUREAUCRAT_HPP_
 
 #include <string>
 #include "Form.hpp"
@@ -47,6 +47,8 @@ public:
 
   // Sign
   void signForm(Form& form);
+
+  void executeForm(Form const& form);
 
   // Error exception
   class GradeTooHighException : public std::exception {
