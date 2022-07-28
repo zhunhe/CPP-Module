@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 03:26:48 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/28 02:31:18 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/28 02:53:42 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,22 +59,40 @@ const std::string& Bureaucrat::getName() const { return this->name; }
 int Bureaucrat::getGrade() const { return this->grade; }
 
 // Grade up & down
+void Bureaucrat::changeGrade(bool up) {
+  if (up) {
+    if (this->grade <= Bureaucrat::highestGrade)
+      throw Bureaucrat::GradeTooHighException();
+    this->grade--;
+  } else {
+    if (this->grade >= Bureaucrat::lowestGrade)
+      throw Bureaucrat::GradeTooLowException();
+    this->grade++;
+  }
+}
+
 void Bureaucrat::gradeUp() {
   std::cout << __func__ << "() is called, ";
-  if (this->grade <= Bureaucrat::highestGrade)
-    throw Bureaucrat::GradeTooHighException();
-  std::cout << this->name << "'s grade ";
-  std::cout << this->grade-- << " -> ";
-  std::cout << this->grade << std::endl;
+  try {
+    std::cout << this->name << "'s ";
+    const int before = this->grade;
+    this->changeGrade(true);
+    std::cout << " grade " << before << " -> " << this->grade << std::endl;
+  } catch (std::exception& e) {
+    std::cerr << e.what() << std::endl;
+  }
 }
 
 void Bureaucrat::gradeDown() {
   std::cout << __func__ << "() is called, ";
-  if (this->grade >= Bureaucrat::lowestGrade)
-    throw Bureaucrat::GradeTooLowException();
-  std::cout << this->name << "'s grade ";
-  std::cout << this->grade++ << " -> ";
-  std::cout << this->grade << std::endl;
+  try {
+    std::cout << this->name << "'s ";
+    const int before = this->grade;
+    this->changeGrade(false);
+    std::cout << " grade " << before << " -> " << this->grade << std::endl;
+  } catch (std::exception& e) {
+    std::cerr << e.what() << std::endl;
+  }
 }
 
 // Sign

@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 03:15:20 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/23 05:28:28 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/28 02:51:30 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ private:
   int grade;
   static const int highestGrade;
   static const int lowestGrade;
+
+  void changeGrade(bool up);
 public:
   // Default constructor
   Bureaucrat();
