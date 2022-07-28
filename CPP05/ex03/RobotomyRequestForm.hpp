@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 09:49:18 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/27 07:47:30 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/28 06:21:57 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
   // Copy assignment operator
   RobotomyRequestForm& operator=(const RobotomyRequestForm& obj);
   // Destructor
-  ~RobotomyRequestForm();
+  virtual ~RobotomyRequestForm();
 
   // Constructor
   RobotomyRequestForm(std::string target);

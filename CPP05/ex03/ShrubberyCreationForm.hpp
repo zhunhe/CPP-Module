@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 08:05:00 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/27 07:47:34 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/28 06:22:02 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
   // Copy assignment operator
   ShrubberyCreationForm& operator=(const ShrubberyCreationForm& obj);
   // Destructor
-  ~ShrubberyCreationForm();
+  virtual ~ShrubberyCreationForm();
 
   // Constructor
   ShrubberyCreationForm(std::string target);

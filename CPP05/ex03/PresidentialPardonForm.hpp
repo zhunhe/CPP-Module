@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 10:11:10 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/27 07:47:25 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/28 06:21:52 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ public:
   // Copy assignment operator
   PresidentialPardonForm& operator=(const PresidentialPardonForm& obj);
   // Destructor
-  ~PresidentialPardonForm();
+  virtual ~PresidentialPardonForm();
 
   // Constructor
   PresidentialPardonForm(std::string target);

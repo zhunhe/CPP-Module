@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 05:01:40 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/27 07:47:19 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/28 06:21:39 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ public:
   // Copy assignment operator
   Form& operator=(const Form& obj);
   // Destructor
-  ~Form();
+  virtual ~Form();
 
   // Getter
   const std::string& getName() const;
