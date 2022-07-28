@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 03:26:48 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/27 06:39:45 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/28 02:31:29 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,19 @@ int Bureaucrat::getGrade() const { return this->grade; }
 
 // Grade up & down
 void Bureaucrat::gradeUp() {
-  std::cout << __func__ << "() is called " << this->name << "'s ";
+  std::cout << __func__ << "() is called, ";
   if (this->grade <= Bureaucrat::highestGrade)
     throw Bureaucrat::GradeTooHighException();
-  std::cout << "grade ";
+  std::cout << this->name << "'s grade ";
   std::cout << this->grade-- << " -> ";
   std::cout << this->grade << std::endl;
 }
 
 void Bureaucrat::gradeDown() {
-  std::cout << __func__ << "() is called " << this->name << "'s ";
+  std::cout << __func__ << "() is called, ";
   if (this->grade >= Bureaucrat::lowestGrade)
     throw Bureaucrat::GradeTooLowException();
-  std::cout << "grade ";
+  std::cout << this->name << "'s grade ";
   std::cout << this->grade++ << " -> ";
   std::cout << this->grade << std::endl;
 }
