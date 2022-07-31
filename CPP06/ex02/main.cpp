@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 05:06:29 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/29 03:51:16 by juhur            ###   ########.fr       */
+/*   Updated: 2022/07/31 08:21:51 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,19 @@ void identify(Base* p) {
 void identify(Base& p) {
   std::cout << __func__ << "(Base& p) is called type: ";
   try {
-    dynamic_cast<A&>(p);
+    (void)dynamic_cast<A&>(p);
     std::cout << "A" << std::endl;
     return;
   } catch(...) {}
 
   try {
-    dynamic_cast<B&>(p);
+    (void)dynamic_cast<B&>(p);
     std::cout << "B" << std::endl;
     return;
   } catch(...) {}
 
   try {
-    dynamic_cast<C&>(p);
+    (void)dynamic_cast<C&>(p);
     std::cout << "C" << std::endl;
   } catch(...) {}
 }
