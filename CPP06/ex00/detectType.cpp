@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/24 06:18:57 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/25 07:24:39 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/01 04:38:52 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,14 @@ static int isInt(std::string str) {
     if ((l > std::numeric_limits<int>::max())
     ||  (l < std::numeric_limits<int>::min()))
       return TYPE_INT_OVERFLOW;
+    return TYPE_INT;
   }
   return TYPE_ERROR;
 }
 
 static bool isFloat(std::string str) {
   char* end = NULL;
-  std::strtof(str.c_str(), &end); // if str is [123.456f], end will be [f]
+  std::strtod(str.c_str(), &end); // if str is [123.456f], end will be [f]
   if (strlen(end) != 1 || *end != 'f')  // There is no 'f' or invalid char in str
     return false;
   return true;

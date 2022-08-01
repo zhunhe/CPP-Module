@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 10:32:24 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/25 07:22:40 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/01 04:34:27 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ Convert::Convert()
   : raw("")
   , type(TYPE_ERROR)
   , c(0)
+  , c_overflow(false)
   , i(0)
   , f(0.0f)
   , d(0.0) {
@@ -36,6 +37,7 @@ Convert::Convert(std::string raw)
   : raw(raw)
   , type(TYPE_ERROR)
   , c(0)
+  , c_overflow(false)
   , i(0)
   , f(0.0f)
   , d(0.0) {
@@ -58,6 +60,7 @@ Convert& Convert::operator=(const Convert& obj) {
     this->raw = obj.raw;
     this->type = obj.type;
     this->c = obj.c;
+    this->c_overflow = obj.c_overflow;
     this->i = obj.i;
     this->f = obj.f;
     this->d = obj.d;
@@ -78,9 +81,9 @@ void Convert::convertToActualType() {
     else  // 'a'
       this->c = this->raw[1];
     break;
-  case TYPE_INT:    this->i = strtol(this->raw.c_str(), NULL, 10);  break;
-  case TYPE_FLOAT:  this->f = strtof(this->raw.c_str(), NULL);      break;
-  case TYPE_DOUBLE: this->d = strtod(this->raw.c_str(), NULL);      break;
+  case TYPE_INT:    this->i = strtol(this->raw.c_str(), NULL, 10);                 break;
+  case TYPE_FLOAT:  this->f = static_cast<float>(strtod(this->raw.c_str(), NULL)); break;
+  case TYPE_DOUBLE: this->d = strtod(this->raw.c_str(), NULL);                     break;
   }
 }
 
@@ -93,7 +96,7 @@ void Convert::convertToOtherType() {
     break;
   case TYPE_INT:
     if (!isascii(static_cast<int>(this->i)))
-      this->c = -1;
+      this->c_overflow = true;
     else
       this->c = static_cast<char>(this->i);
     this->f = static_cast<float>(this->i);
@@ -101,7 +104,7 @@ void Convert::convertToOtherType() {
     break;
   case TYPE_FLOAT:
     if (!isascii(static_cast<int>(this->f)))
-      this->c = -1;
+      this->c_overflow = true;
     else
       this->c = static_cast<char>(this->f);
     this->i = static_cast<long>(this->f);
@@ -109,7 +112,7 @@ void Convert::convertToOtherType() {
     break;
   case TYPE_DOUBLE:
     if (!isascii(static_cast<int>(this->d)))
-        this->c = -1;
+      this->c_overflow = true;
     else
       this->c = static_cast<char>(this->d);
     this->i = static_cast<long>(this->d);
@@ -128,7 +131,7 @@ void Convert::printAll() {
 
 void Convert::printChar() {
   std::cout << "char: ";
-  if (this->type == TYPE_ERROR || this->type == TYPE_INT_OVERFLOW || !isascii(this->c))
+  if (this->type == TYPE_ERROR || this->type == TYPE_INT_OVERFLOW || this->c_overflow)
     std::cout << "impossible";
   else if (!isprint(this->c))
     std::cout << "Non displayable";

@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 10:24:08 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/24 12:39:17 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/01 04:31:58 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ private:
   std::string raw;
   int type;
   char c;
+  bool c_overflow;
   long i;
   float f;
   double d;
