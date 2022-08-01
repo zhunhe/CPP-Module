@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 03:53:42 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/29 06:46:16 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/01 19:39:26 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ class Awesome
 {
 public:
   // Default constructor
-  Awesome::Awesome() : _n(0) {}
+  Awesome() : _n(0) {}
 
   // Constructor
-  Awesome::Awesome(int n) : _n(n) {}
+  Awesome(int n) : _n(n) {}
 
   // Copy assignment operator
   Awesome& operator=(const Awesome& rhs) {

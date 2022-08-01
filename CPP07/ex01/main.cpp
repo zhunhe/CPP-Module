@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 06:50:25 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/31 06:50:20 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/01 19:40:04 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,14 @@ void print(T const& x) {
   std::cout << x << std::endl;
 }
 
+#define LEN 5
+
 int main() {
-  int len = 5;
-  int tab[len] = {0, 1, 2, 3, 4};
+  int tab[LEN] = {0, 1, 2, 3, 4};
 
-  Awesome tab2[len];
+  Awesome tab2[LEN];
 
-  iter<int>(tab, len, print);
-  ::iter(tab2, len, print);
+  iter<int>(tab, LEN, print);
+  ::iter(tab2, LEN, print);
   return 0;
 }
