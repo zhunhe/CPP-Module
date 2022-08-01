@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 08:03:28 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/27 08:22:51 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/01 04:04:28 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main() {
   Data* deserialized = deserialize(serialized);
 
   std::cout << &data << std::endl;
-  std::cout << &deserialized << std::endl;
+  std::cout << deserialized << std::endl;
   
   std::cout << std::endl;
 
