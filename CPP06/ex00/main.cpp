@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/23 10:23:19 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/24 12:39:33 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/02 14:41:13 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int main(int argc, char** argv) {
   if (argc != 2) {
-    std::cerr << "[Usage]: ./a.out [value]" << std::endl;
+    std::cerr << "[Usage]: " << argv[0] << " [value]" << std::endl;
     return 1;
   }
   Convert convert(argv[1]);
