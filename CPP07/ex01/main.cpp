@@ -6,45 +6,32 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 06:50:25 by juhur             #+#    #+#             */
-/*   Updated: 2022/08/01 19:40:04 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/02 14:39:34 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <ostream>
 #include "iter.hpp"
-
-class Awesome {
-public:
-  // Default constructor
-  Awesome() : _n(42) { return; }
-
-  // Getter
-  int get() const { return this->_n; }
-
-private:
-  int _n;
-};
-
-// Insertion operator
-std::ostream& operator<<(std::ostream& os, Awesome const& rhs) {
-  os << rhs.get();
-  return os;
-}
-
-template <typename T>
-void print(T const& x) {
-  std::cout << x << std::endl;
-}
 
 #define LEN 5
 
 int main() {
-  int tab[LEN] = {0, 1, 2, 3, 4};
+  std::cout << "----- int -----" << std::endl;
+  {
+    int tab[LEN] = {1, 2, 3, 4, 5};
 
-  Awesome tab2[LEN];
+    iter<int>(tab, LEN, println);
+  }
+  std::cout << "----- float -----" << std::endl;
+  {
+    float tab[LEN] = {1.1f, 2.2f, 3.3f, 4.4f, 5.5f};
 
-  iter<int>(tab, LEN, print);
-  ::iter(tab2, LEN, print);
+    iter<float>(tab, LEN, println);
+  }
+  std::cout << "----- double -----" << std::endl;
+  {
+    double tab[LEN] = {1.1, 2.2, 3.3, 4.4, 5.5};
+
+    iter<double>(tab, LEN, println);
+  }
   return 0;
 }

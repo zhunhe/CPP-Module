@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 07:18:16 by juhur             #+#    #+#             */
-/*   Updated: 2022/07/31 07:26:11 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/02 14:04:25 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,24 +48,12 @@ int main() {
   } catch(std::exception& e) {
     std::cerr << e.what() << std::endl;
   }
-  std::cout << "---------- error: constructor ----------" << std::endl;
-  try {
-    Array<int> arrayInt(-1);  // ERROR !
-    for (int i = 0; i < LEN; i++)
-      arrayInt[i] = i + 1;
-    for (int i = 0; i < LEN; i++)
-      std::cout << arrayInt[i] << " ";
-    std::cout << std::endl;
-  } catch(std::exception& e) {
-    std::cerr << e.what() << std::endl;
-  }
   std::cout << "---------- error: [] ----------" << std::endl;
   try {
     Array<int> arrayInt(LEN);
     for (int i = 0; i < LEN; i++)
       arrayInt[i] = i + 1;
     std::cout << arrayInt[LEN]; // ERROR !
-    // std::cout << arrayInt[-1];
     std::cout << std::endl;
   } catch(std::exception& e) {
     std::cerr << e.what() << std::endl;
