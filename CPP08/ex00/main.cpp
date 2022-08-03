@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 08:54:19 by juhur             #+#    #+#             */
-/*   Updated: 2022/08/03 11:51:29 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/03 17:25:14 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ int main() {
       v[i] = (i + 1) * 1.1;
 
     if (easyfind(v, 5.5) != v.end())
-      std::cout << "Find!" << std::endl;
+      std::cout << "Find!" << std::endl;  // !
     else
-      std::cout << "Fail to find!" << std::endl;  // !
+      std::cout << "Fail to find!" << std::endl;
   }
 }
