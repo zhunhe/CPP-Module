@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 05:52:08 by juhur             #+#    #+#             */
-/*   Updated: 2022/08/01 07:48:24 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/03 13:38:31 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
 
   // Add number to Span
   void addNumber(int number);
-  void addManyNumber(unsigned int count, int number);
+  void addNumber(unsigned long long count, int number);
 
   // Get distance
   // If there are no numbers stored, or only one, no span can be found. -> throw exception

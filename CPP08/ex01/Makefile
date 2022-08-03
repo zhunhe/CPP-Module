@@ -6,11 +6,11 @@
 #    By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/23 10:23:08 by juhur             #+#    #+#              #
-#    Updated: 2022/08/01 07:50:02 by juhur            ###   ########.fr        #
+#    Updated: 2022/08/03 13:08:17 by juhur            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = a.out
+NAME = ex01
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
