@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 08:54:19 by juhur             #+#    #+#             */
-/*   Updated: 2022/08/01 05:41:52 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/03 11:51:29 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,31 @@
 #include <list>
 #include "easyfind.hpp"
 
-#define LEN 10
+#define LEN 5
+
 int main() {
+  std::cout << "---------- vector<int> ----------" << std::endl;
   {
     std::vector<int> v(LEN);
 
     for (size_t i = 0; i < v.size(); i++)
       v[i] = i + 1;
 
-    std::vector<int>::iterator iter;
-    for (iter = v.begin(); iter != v.end(); iter++)
+    for (std::vector<int>::iterator iter = v.begin(); iter != v.end(); iter++)
       std::cout << *iter << " ";
     std::cout << std::endl;
 
-    iter = easyfind(v, 42);
-    if (iter == v.end())
-      std::cout << "Fail to find!" << std::endl;
+    if (easyfind(v, 42) == v.end())
+      std::cout << "Fail to find!" << std::endl;  // !
     else
-      std::cout << "Find! " << *iter << std::endl;
+      std::cout << "Find!" << std::endl;
 
-    iter = easyfind(v, 5);
-    if (iter == v.end())
+    if (easyfind(v, 5) == v.end())
       std::cout << "Fail to find!" << std::endl;
     else
-      std::cout << "Find! " << *iter << std::endl;
+      std::cout << "Find!" << std::endl; // !
   }
+  std::cout << "---------- list<int> ----------" << std::endl;
   {
     std::list<int> l(LEN);
 
@@ -47,24 +47,42 @@ int main() {
     // for (size_t i = 0; i < l.size(); i++)
     //   l[i] = i + 1;
 
-    std::list<int>::iterator iter;
     size_t i = 1;
-    for (iter = l.begin(); iter != l.end(); iter++)
+    for (std::list<int>::iterator iter = l.begin(); iter != l.end(); iter++)
       *iter = i++;
-    for (iter = l.begin(); iter != l.end(); iter++)
+
+    for (std::list<int>::iterator iter = l.begin(); iter != l.end(); iter++)
       std::cout << *iter << " ";
     std::cout << std::endl;
 
-    iter = easyfind(l, 42);
-    if (iter == l.end())
-      std::cout << "Fail to find!" << std::endl;
+    if (easyfind(l, 42) == l.end())
+      std::cout << "Fail to find!" << std::endl;  // !
     else
-      std::cout << "Find! " << *iter << std::endl;
+      std::cout << "Find!" << std::endl;
 
-    iter = easyfind(l, 5);
-    if (iter == l.end())
+    if (easyfind(l, 5) == l.end())
       std::cout << "Fail to find!" << std::endl;
     else
-      std::cout << "Find! " << *iter << std::endl;
+      std::cout << "Find!" << std::endl; // !
+  }
+  std::cout << "---------- vector<double> ----------" << std::endl;
+  {
+    std::vector<double> v(LEN);
+
+    for (size_t i = 0; i < v.size(); i++)
+      v[i] = (i + 1);
+
+    if (easyfind(v, 5) != v.end())
+      std::cout << "Find!" << std::endl;  // !
+    else
+      std::cout << "Fail to find!" << std::endl;
+
+    for (size_t i = 0; i < v.size(); i++)
+      v[i] = (i + 1) * 1.1;
+
+    if (easyfind(v, 5.5) != v.end())
+      std::cout << "Find!" << std::endl;
+    else
+      std::cout << "Fail to find!" << std::endl;  // !
   }
 }
