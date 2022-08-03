@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 09:11:59 by juhur             #+#    #+#             */
-/*   Updated: 2022/08/01 10:17:08 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/03 17:02:38 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ MutantStack<T>::MutantStack(const MutantStack& obj) {
 // Copy assignment operator
 template <typename T>
 MutantStack<T>& MutantStack<T>::operator=(const MutantStack& rhs) {
-  *this = rhs;
+  if (this != &rhs)
+    *this = rhs;
   return *this;
 }
 
