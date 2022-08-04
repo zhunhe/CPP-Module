@@ -6,13 +6,14 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 05:52:05 by juhur             #+#    #+#             */
-/*   Updated: 2022/08/04 06:48:52 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/04 07:48:50 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <algorithm>
 #include <iterator>
 #include <limits>
+#include <cmath>
 #include "Span.hpp"
 
 // Default constructor
@@ -57,7 +58,7 @@ int Span::shortestSpan() const {
   sort(tmpV.begin(), tmpV.end());
   int diffMin = std::numeric_limits<int>::max();
   for (size_t i = 0; i < tmpV.size() - 1; i++)
-    diffMin = std::min(diffMin, tmpV[i + 1] - tmpV[i]);
+    diffMin = std::min(diffMin, std::abs(tmpV[i + 1] - tmpV[i]));
   return diffMin;
 }
 
