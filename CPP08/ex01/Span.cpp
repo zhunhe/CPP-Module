@@ -6,12 +6,12 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 05:52:05 by juhur             #+#    #+#             */
-/*   Updated: 2022/08/03 17:18:05 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/04 15:09:01 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <algorithm>
-#include <limits>
+#include <iterator>
 #include "Span.hpp"
 
 // Default constructor
@@ -48,15 +48,7 @@ void Span::addNumber(int number) {
   this->v.push_back(number);
 }
 
-void Span::addNumber(unsigned long long count, int number) {
-  unsigned long long after = v.size() + count;
-  if (after > N)
-    throw Span::FullException();
-  for (unsigned long long i = 0; i < count; i++)
-    this->v.push_back(number);
-}
-
-// Get distance
+// Get span
 int Span::shortestSpan() const {
   if (this->v.size() < 2)
     throw Span::NoSpanException();

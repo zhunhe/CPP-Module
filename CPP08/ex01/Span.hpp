@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 05:52:08 by juhur             #+#    #+#             */
-/*   Updated: 2022/08/03 13:38:31 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/04 15:21:14 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CPP08_EX01_SPAN_HPP_
 
 #include <vector>
+#include <iterator>
 #include <exception>
 
 class Span {
@@ -36,7 +37,13 @@ public:
 
   // Add number to Span
   void addNumber(int number);
-  void addNumber(unsigned long long count, int number);
+  template <typename T>
+  void addNumber(T begin, T end) {
+    if (static_cast<unsigned long long>(std::distance(begin, end)) > this->N - this->v.size())
+      throw Span::FullException();
+    while (begin != end)
+      this->v.push_back(*(begin++));
+  }
 
   // Get distance
   // If there are no numbers stored, or only one, no span can be found. -> throw exception

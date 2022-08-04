@@ -6,11 +6,12 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 07:49:44 by juhur             #+#    #+#             */
-/*   Updated: 2022/08/03 17:19:33 by juhur            ###   ########.fr       */
+/*   Updated: 2022/08/04 15:24:59 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <list>
 #include "Span.hpp"
 
 int main() {
@@ -32,22 +33,24 @@ int main() {
     try {
       Span span(10);
 
-      span.addNumber(10, 42);
+      for (int i = 0; i < 10; i++)
+        span.addNumber(42);
       span.addNumber(42); // ERROR !
-    } catch (std::exception& e) {
+    } catch (const std::exception& e) {
       std::cerr << e.what() << std::endl;
     }
   }
-  std::cout << "---------- FULL ERROR ----------" << std::endl;
+  std::cout << "---------- FULL ERROR (USING COPY ASSIGNMENT OPERATOR) ----------" << std::endl;
   {
     try {
       Span span1(20);
       Span span2(10);
 
-      span2.addNumber(10, 42);
+      for (int i = 0; i < 10; i++)
+        span2.addNumber(42);
       span1 = span2;
       span1.addNumber(11);  // ERROR !
-    } catch (std::exception& e) {
+    } catch (const std::exception& e) {
       std::cerr << e.what() << std::endl;
     }
   }
@@ -59,7 +62,26 @@ int main() {
       span.addNumber(5);
       std::cout << span.shortestSpan() << std::endl;  // ERROR !
       std::cout << span.longestSpan() << std::endl;
-    } catch (std::exception& e) {
+    } catch (const std::exception& e) {
+      std::cerr << e.what() << std::endl;
+    }
+  }
+  std::cout << "---------- ADD NUMBER USING ITERATOR ----------" << std::endl;
+  {
+    try {
+      std::list<int> l;
+
+      for (int i = 0; i < 5; i++)
+        l.push_back(i + 1);
+
+      Span span(10);
+
+      span.addNumber(5);
+      span.addNumber(l.begin(), l.end());
+
+      std::cout << span.shortestSpan() << std::endl;
+      std::cout << span.longestSpan() << std::endl;
+    } catch (const std::exception& e) {
       std::cerr << e.what() << std::endl;
     }
   }
